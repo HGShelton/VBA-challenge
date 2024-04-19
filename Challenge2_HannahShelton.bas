@@ -33,7 +33,7 @@ Sub Stocks()
     
         'Check if ticker has changed, calculate yearly change
         If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
-          
+            
             'Set values
             ticker = ws.Cells(i, 1)
             close_price = ws.Cells(i, 6).Value
@@ -47,7 +47,8 @@ Sub Stocks()
                 ws.Cells(summary_table, 11).Value = percent_change
                 ws.Cells(summary_table, 12).Value = total_volume
                 summary_table = summary_table + 1
-            
+
+            'Collaborated with peers to troubleshoot coding errors
             'reset values
             open_price = ws.Cells(i + 1, 3).Value
             year_close = 0
@@ -77,7 +78,7 @@ Sub Stocks()
     'Greatest Values
     Dim ticker_inc, ticker_dec, ticker_volume As String
     Dim percent_inc, percent_dec, great_volume As Double
-    
+
     'set columns
     ws.Cells(2, 15).Value = "Greatest % Increase"
     ws.Cells(3, 15).Value = "Greatest % Decrease"
@@ -90,6 +91,7 @@ Sub Stocks()
     percent_dec = 0
     great_volume = 0
 
+    'Collaborated with peers to troubleshoot coding errors
     'loop
     For k = 2 To ws.Cells(Rows.Count, 9).End(xlUp).Row
         If ws.Cells(k, 11).Value > percent_inc Then
